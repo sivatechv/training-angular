@@ -1,0 +1,62 @@
+// .bgHeaderImg{
+//     background: url('../../../assets/images/others/homepage.jpg');
+// }
+
+// @keyframes animatedBackground {
+//     from {
+//       background-position: 0 0;
+//     }
+//     to {
+//       background-position: 100% 0;
+//     }
+//   }
+// #bgHeaderImg{
+//     background-position: 0px 0px;
+//     background-repeat: repeat-x;
+//     background-image: url('../../../assets/images/others/homepage.jpg') ;
+//     animation: animatedBackground 10s linear infinite alternate;
+//   }
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    padding: 6px 6px 0 0;
+    
+}  
+
+.flex-child:first-child {
+    margin:0px 5px  -16px 0px;
+    display: flex;
+} 
+
+.about-us-home{
+    width: 100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-color-home{
+    color: #e12929;
+    position: relative;
+    font-size: 24px;
+    font-family: "Lora", serif;
+}
+
+/*------Read More button color */
+div button.btnColor{
+    background: #e12929;
+    color: #fff;
+}
+
+.mat-card-image{
+    margin: 0px !important;
+  }
+  
+
+  @media only screen and (min-width: 390px)  {
+    .pl-4{padding-left: 0.5rem !important;}
+  }

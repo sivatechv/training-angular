@@ -1,0 +1,130 @@
+<app-header-image
+  [backgroundImage]="contactBackgroundImmage"
+  [title]="contactTitle"
+  [desc]="contactDesc"
+></app-header-image>
+
+<div class="px-3">
+  <div class="theme-container">
+    <mat-card class="contact-container">
+      <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+        <div
+          fxFlex="30"
+          fxFlex.xs="90"
+          fxFlex.sm="90"
+          fxLayout="column"
+          fxLayoutAlign="space-evenly center"
+        >
+          <mat-icon color="primary">home</mat-icon>
+          <h4 class="contact-about-title">ADDRESS:</h4>
+          <span class="mx-0">2903 Avenue Z, MG Marg, MUMBAI, India</span>
+        </div>
+        <div
+          fxFlex="30"
+          fxFlex.xs="90"
+          fxFlex.sm="90"
+          fxLayout="column"
+          fxLayoutAlign="space-evenly center"
+        >
+          <mat-icon color="primary">call</mat-icon>
+          <h4 class="contact-about-title">PHONES:</h4>
+          <span class="mx-0">(+91) 9876543210</span>
+          <span class="mx-0">(+91) 9876543211</span>
+        </div>
+        <div
+          fxFlex="30"
+          fxFlex.xs="90"
+          fxFlex.sm="90"
+          fxLayout="column"
+          fxLayoutAlign="space-evenly center"
+        >
+          <mat-icon color="primary">mail</mat-icon>
+          <h4 class="contact-about-title">E-MAIL:</h4>
+          <span class="mx-0">contact@skywave.com</span>
+          <span class="mx-0">info@skywave.com</span>
+        </div>
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutGap="20px"
+        fxLayout.sm="column"
+        fxLayout.xs="column"
+      >
+        <div fxFlex="49%" fxFlex.xs="90" fxFlex.sm="90" class="pt-6">
+          <mat-card-title
+            fxLayoutAlign="space-evenly center"
+            class="contact-text-color"
+            >Get In Touch</mat-card-title
+          >
+          <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit()">
+            <mat-form-field appearance="outline" class="w-100" color="primary">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                autocomplete="off"
+                formControlName="name"
+                required
+              />
+              <mat-error *ngIf="contactForm.controls.name.errors?.required"
+                >Name is required</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                autocomplete="off"
+                formControlName="email"
+                required
+              />
+              <mat-error *ngIf="contactForm.controls.email.errors?.required"
+                >Email is required</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Phone</mat-label>
+              <input
+                matInput
+                autocomplete="off"
+                formControlName="phone"
+                required
+              />
+              <mat-error *ngIf="contactForm.controls.phone.errors?.required"
+                >Phone is required</mat-error
+              >
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Message</mat-label>
+              <textarea
+                matInput
+                formControlName="message"
+                rows="4"
+                required
+              ></textarea>
+              <mat-error *ngIf="contactForm.controls.message.errors?.required"
+                >Message is required</mat-error
+              >
+            </mat-form-field>
+            <div class="w-100 text-center">
+              <button
+                mat-flat-button
+                color="primary"
+                class="uppercase submitBtn"
+                type="submit"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div fxFlex="49%" fxFlex.sm="90" fxFlex.xs="90" class="get-in-touch-img">
+          <img
+            src="../../../assets/images/others/about-1.jpg"
+            alt="about"
+            class="abt-img"
+          />
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
