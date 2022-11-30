@@ -1,46 +1,48 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { DatePipe } from "@angular/common";
+import { Observable } from "rxjs";
 
-import { MatDialog } from '@angular/material/dialog';
-import { TranslateService } from '@ngx-translate/core';
-import { MenuItem, Order, Category } from 'src/app/app.models';
-import { AppSettings } from 'src/app/app.settings';
-import { environment } from 'src/environments/environment';
+import { MatDialog } from "@angular/material/dialog";
+import { TranslateService } from "@ngx-translate/core";
+import { MenuItem, Order, Category } from "src/app/app.models";
+import { AppSettings } from "src/app/app.settings";
+import { environment } from "src/environments/environment";
 
-import { map } from 'rxjs/operators';
+import { map } from "rxjs/operators";
 
 export class Data {
-  constructor(public categories: Category[],
-              public cartList: MenuItem[],
-              public orderList: Order[],
-              public favorites: MenuItem[],
-              public totalPrice: number,
-              public totalCartCount: number
-              ) { }
+  constructor(
+    public categories: Category[],
+    public cartList: MenuItem[],
+    public orderList: Order[],
+    public favorites: MenuItem[],
+    public totalPrice: number,
+    public totalCartCount: number
+  ) {}
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AppService {
-
-  constructor(public http: HttpClient,
-              public datePipe: DatePipe,
-              public dialog: MatDialog,
-              public appSettings: AppSettings,
-              public translateService: TranslateService) { }
+  constructor(
+    public http: HttpClient,
+    public datePipe: DatePipe,
+    public dialog: MatDialog,
+    public appSettings: AppSettings,
+    public translateService: TranslateService
+  ) {}
   public Data = new Data(
-    [],  // categories
-    [],  // cartList
-    [],  // orderList
-    [],  // favorites
+    [], // categories
+    [], // cartList
+    [], // orderList
+    [], // favorites
     0, // totalPrice
     0 // totalCartCount
   );
 
-  public url = environment.url + '/assets/data/';
+  public url = environment.url + "/assets/data/";
 
   // public getCountries(){
   //   return [
@@ -290,8 +292,6 @@ export class AppService {
   //   ]
   // }
 
-
-
   // public getMonths(){
   //   return [
   //     { value: '01', name: 'January' },
@@ -344,27 +344,23 @@ export class AppService {
   //   xhr.send();
   // }
 
+  public mailApi = "https://mailthis.to/codeninja";
 
-  public mailApi = 'https://mailthis.to/codeninja';
-
-  public getMenuItems(): Observable<MenuItem[]>{
-    return this.http.get<MenuItem[]>(this.url + 'menu-items.json');
+  public getMenuItems(): Observable<MenuItem[]> {
+    return this.http.get<MenuItem[]>(this.url + "menu-items.json");
   }
 
-  public getMenuItemById(id: number): Observable<MenuItem>{
-    return this.http.get<MenuItem>(this.url + 'menu-item-' + id + '.json');
+  public getMenuItemById(id: number): Observable<MenuItem> {
+    return this.http.get<MenuItem>(this.url + "menu-item-" + id + ".json");
   }
 
-  public getSpecialMenuItems(): Observable<MenuItem[]>{
-    return this.http.get<MenuItem[]>(this.url + 'special-menu-items.json');
+  public getSpecialMenuItems(): Observable<MenuItem[]> {
+    return this.http.get<MenuItem[]>(this.url + "special-menu-items.json");
   }
 
-
-  public getCategories(): Observable<Category[]>{
-    return this.http.get<Category[]>(this.url + 'categories.json');
+  public getCategories(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.url + "categories.json");
   }
-
-
 
   // public filterData(data:any, categoryId:number, sort?:string, page?:number, perPage?:number){
   //   if(categoryId){
@@ -437,21 +433,17 @@ export class AppService {
   //   };
   // }
   public postMessage(input: any): any {
-    return this.http.post(this.mailApi, input, { responseType: 'text' })
-      .pipe(
-        map(
-          (response: any) => {
-            if (response) {
-              return response;
-            }
-          },
-          (error: any) => {
-            return error;
+    return this.http.post(this.mailApi, input, { responseType: "text" }).pipe(
+      map(
+        (response: any) => {
+          if (response) {
+            return response;
           }
-        )
-      );
+        },
+        (error: any) => {
+          return error;
+        }
+      )
+    );
   }
-
-
-
 }

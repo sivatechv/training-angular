@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
 import { AppModule } from "src/app/app.module";
@@ -15,7 +15,6 @@ describe("MenuService", () => {
     service = TestBed.inject(MenuService);
   });
 
-  // setting up spy
   beforeEach(() => {});
 
   it("should be created", () => {

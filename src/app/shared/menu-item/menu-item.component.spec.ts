@@ -7,7 +7,6 @@ describe("HorizontalMenuComponent", () => {
   let component: MenuItemComponent;
   let fixture: ComponentFixture<MenuItemComponent>;
   let value: any;
-  // let changes: any;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MenuItemComponent],
@@ -31,12 +30,6 @@ describe("HorizontalMenuComponent", () => {
     component.ngOnInit();
     expect(component.ngOnInit).toHaveBeenCalled();
   });
-
-  // it('ngOnChanges Called', () => {
-  //   spyOn(component, 'ngOnChanges').and.callThrough();
-  //   component.ngOnChanges(changes);
-  //   expect(component.ngOnChanges).toHaveBeenCalled()
-  // });
 
   it("should call getColumnCount Called", () => {
     spyOn(component, "getColumnCount").and.callThrough();

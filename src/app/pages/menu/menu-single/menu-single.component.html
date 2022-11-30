@@ -12,13 +12,13 @@
         </div>
         <div fxFlex="100" fxFlex.gt-sm="50" class="px-3">
           <h1 class="secondary-font">{{ menuItem.name }}</h1>
- 
+
           <div fxLayout="row" fxLayoutAlign="start center"></div>
- 
+
           <h1 *ngIf="!menuItem.discount" class="primary-color py-3">
             {{ menuItem.price | currency: "INR":"symbol":"1.2-2" }}
           </h1>
- 
+
           <h1 *ngIf="menuItem.discount" class="py-3">
             <span class="text-muted old-price">{{
               menuItem.price | currency: "INR":"symbol":"1.2-2"
@@ -96,7 +96,7 @@
             <li>Love to listen.....Visit us, today!!</li>
           </ul>
         </div>
- 
+
         <div fxFlex="100" class="px-3 mt-5">
           <mat-tab-group [@.disabled]="true" [selectedIndex]="0">
             <mat-tab label="Reviews">
@@ -110,5 +110,5 @@
     </mat-card>
   </div>
 </div>
- 
+
 <app-get-in-touch></app-get-in-touch>

@@ -1,14 +1,14 @@
-import { AfterViewInit, Component, Input, OnInit } from "@angular/core";
-import { SwiperConfigInterface } from "ngx-swiper-wrapper";
-import { MenuItem } from "src/app/app.models";
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+import { MenuItem } from 'src/app/app.models';
 
 @Component({
-  selector: "app-menu-items-carousel",
-  templateUrl: "./menu-items-carousel.component.html",
-  styleUrls: ["./menu-items-carousel.component.scss"],
+  selector: 'app-menu-items-carousel',
+  templateUrl: './menu-items-carousel.component.html',
+  styleUrls: ['./menu-items-carousel.component.scss'],
 })
 export class MenuItemsCarouselComponent implements OnInit, AfterViewInit {
-  @Input("menuItems") menuItems: Array<MenuItem> = [];
+  @Input('menuItems') menuItems: Array<MenuItem> = [];
   public config: SwiperConfigInterface = {};
 
   constructor() {}
@@ -21,7 +21,7 @@ export class MenuItemsCarouselComponent implements OnInit, AfterViewInit {
       slidesPerView: 4,
       spaceBetween: 16,
       keyboard: true,
-      navigation: { nextEl: ".prop-next", prevEl: ".prop-prev" },
+      navigation: { nextEl: '.prop-next', prevEl: '.prop-prev' },
       pagination: true,
       grabCursor: true,
       loop: false,

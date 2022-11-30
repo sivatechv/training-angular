@@ -4,19 +4,19 @@ import {
   OnChanges,
   OnInit,
   SimpleChange,
-} from "@angular/core";
-import { MenuItem } from "src/app/app.models";
-import { AppService } from "src/app/app.service";
+} from '@angular/core';
+import { MenuItem } from 'src/app/app.models';
+import { AppService } from 'src/app/app.service';
 
 @Component({
-  selector: "app-menu-item",
-  templateUrl: "./menu-item.component.html",
-  styleUrls: ["./menu-item.component.scss"],
+  selector: 'app-menu-item',
+  templateUrl: './menu-item.component.html',
+  styleUrls: ['./menu-item.component.scss'],
 })
 export class MenuItemComponent implements OnInit, OnChanges {
   @Input() menuItem!: any;
   @Input() lazyLoad = false;
-  @Input() viewType = "grid";
+  @Input() viewType = 'grid';
   @Input() viewColChanged: any;
   public column = 4;
   constructor(public appService: AppService) {}

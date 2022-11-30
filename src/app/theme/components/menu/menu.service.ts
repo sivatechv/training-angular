@@ -1,16 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { Location } from "@angular/common";
 
-import { Menu } from './menu.model';
-import {  horizontalMenuItems } from './menu';
+import { Menu } from "./menu.model";
+import { horizontalMenuItems } from "./menu";
 
 @Injectable()
 export class MenuService {
-
-  constructor(public location: Location,
-              public router: Router){ }
-
+  constructor(public location: Location, public router: Router) {}
 
   public getHorizontalMenuItems(): Array<Menu> {
     return horizontalMenuItems;
@@ -60,7 +57,4 @@ export class MenuService {
   //     }
   //   });
   // }
-
-
-
 }

@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { MatMenuTrigger } from "@angular/material/menu";
 import { AppModule } from "src/app/app.module";
 import { AboutComponent } from "./about.component";
 

@@ -19,7 +19,7 @@ describe("MenuSingleComponent", () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            params: of({ id: 11 }),
+            params: of({ id: 25 }),
           },
         },
       ],
@@ -49,7 +49,7 @@ describe("MenuSingleComponent", () => {
     expect(component.getMenuItemById).toHaveBeenCalledWith(25);
   });
 
-  //call unsubscribes
+  // call unsubscribes
   it("unsubscribes when destoryed", () => {
     spyOn(component.sub, "unsubscribe");
     component.ngOnDestroy();
